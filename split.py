@@ -32,13 +32,17 @@ val_ratio = 0.1
 test_ratio = 0.2
 
 # Split the data into train, validation, and test sets
-train_yes = yes_files[:int(len(yes_files) * train_ratio)]
-val_yes = yes_files[int(len(yes_files) * train_ratio):int(len(yes_files) * (train_ratio + val_ratio))]
-test_yes = yes_files[int(len(yes_files) * (train_ratio + val_ratio)):]
+train_yes = yes_files[: int(len(yes_files) * train_ratio)]
+val_yes = yes_files[
+    int(len(yes_files) * train_ratio) : int(len(yes_files) * (train_ratio + val_ratio))
+]
+test_yes = yes_files[int(len(yes_files) * (train_ratio + val_ratio)) :]
 
-train_no = no_files[:int(len(no_files) * train_ratio)]
-val_no = no_files[int(len(no_files) * train_ratio):int(len(no_files) * (train_ratio + val_ratio))]
-test_no = no_files[int(len(no_files) * (train_ratio + val_ratio)):]
+train_no = no_files[: int(len(no_files) * train_ratio)]
+val_no = no_files[
+    int(len(no_files) * train_ratio) : int(len(no_files) * (train_ratio + val_ratio))
+]
+test_no = no_files[int(len(no_files) * (train_ratio + val_ratio)) :]
 
 # Move the files to the respective directories
 for file in train_yes:
@@ -58,4 +62,3 @@ for file in val_no:
 
 for file in test_no:
     shutil.copy(os.path.join(no_folder, file), os.path.join("test/no", file))
-
