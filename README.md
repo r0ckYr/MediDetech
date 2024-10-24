@@ -1,6 +1,5 @@
 Dataset for PixelVision
 
-Project Link : https://github.com/r0ckYr/PixelVision
 
 ## Dataset(base)
 1. Brain Tumor : https://www.kaggle.com/datasets/navoneel/brain-mri-images-for-brain-tumor-detection/
